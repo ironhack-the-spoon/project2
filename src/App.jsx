@@ -4,9 +4,13 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+
   const [count, setCount] = useState(20);
   const [anotherCount, setAnotherCount] = useState();
   console.Log("hello world");
+
+  const [conflict, setConflict] = useState()
+
   return (
     <>
       <div>
