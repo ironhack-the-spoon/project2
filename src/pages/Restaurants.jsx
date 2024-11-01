@@ -24,7 +24,7 @@ function Restaurants() {
     <div>Restaurants
       {restaurantsList && restaurantsList.map(restaurantDetails => {
         return (
-          <div className="card" key={restaurantDetails.id}>
+          <div className="restaurant-card" key={restaurantDetails.id}>
           <Link to={`/details/${restaurantDetails.id}`}>
               <h3>{restaurantDetails.name}</h3>
           </Link>
