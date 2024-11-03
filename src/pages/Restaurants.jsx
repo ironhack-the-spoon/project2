@@ -18,10 +18,17 @@ function Restaurants() {
 
   // Function to handle delete action
   const handleDelete = (id) => {
+    axios
+      .delete(`${API_URL}/projects/${id}.json`)
+      .then((response) => {
+        console.log("Restaurant deleted", response);
+
     const updatedList = restaurantsList.filter(
       (restaurant) => restaurant.id !== id
     );
     setRestaurantsList(updatedList);
+})
+      .catch((e) => console.log("Error deleting restaurant", e));
   };
 
   if (restaurantsList === null) {
