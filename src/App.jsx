@@ -1,33 +1,33 @@
+import "./style/App.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import Restaurants from "./pages/Restaurants";
+import DetailsPage from "./pages/DetailsPage";
+import AddRestaurantPage from "./pages/AddRestaurantPage";
+import Michelin from "./pages/Michelin";
+import About from "./pages/About";
+import NotFoundPage from "./pages/NotFoundPage";
+import Footer from "./components/Footer";
 
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Homepage from './pages/Homepage'
-import Restaurants from './pages/Restaurants'
-import DetailsPage from './pages/DetailsPage'
-import Michelin from './pages/Michelin'
-import About from './pages/About'
-import NotFoundPage from './pages/NotFoundPage'
-import Footer from './components/Footer'
 function App() {
-
   return (
     <div>
-    <Navbar/>
+      <Navbar />
 
-<Routes>
-<Route path="/" element={<Homepage/>}></Route>
-<Route path="/restaurants" element={<Restaurants/>}></Route>
-<Route path="/details" element={<DetailsPage/>}></Route>
-<Route path="/michelin" element={<Michelin/>}></Route>
-<Route path="/about" element={<About/>}></Route>
-<Route path="*" element={<NotFoundPage/>}></Route>
-</Routes>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/restaurants" element={<Restaurants />}></Route>
+        <Route path="/details" element={<DetailsPage />}></Route>
+        <Route path="/michelin" element={<Michelin />}></Route>
+        <Route path="/add-restaurant" element={<AddRestaurantPage />} />
+        <Route path="/about" element={<About />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
+      </Routes>
 
-<Footer/>
-
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
