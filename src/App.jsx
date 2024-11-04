@@ -1,5 +1,5 @@
 
-import './App.css'
+import './style/App.css'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage'
@@ -10,10 +10,12 @@ import About from './pages/About'
 import NotFoundPage from './pages/NotFoundPage'
 import Footer from './components/Footer'
 import Edit from './pages/Edit'
-function App() {
+import AddRestaurantPage from "./pages/AddRestaurantPage";
 
+function App() {
   return (
     <div>
+
     <Navbar/>
 
 <Routes>
@@ -26,10 +28,19 @@ function App() {
 <Route path="*" element={<NotFoundPage/>}></Route>
 </Routes>
 
-<Footer/>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/restaurants" element={<Restaurants />}></Route>
+        <Route path="/details" element={<DetailsPage />}></Route>
+        <Route path="/michelin" element={<Michelin />}></Route>
+        <Route path="/add-restaurant" element={<AddRestaurantPage />} />
+        <Route path="/about" element={<About />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
+      </Routes>
 
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
