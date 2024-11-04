@@ -11,7 +11,7 @@ function Restaurants() {
     useEffect(() => {
       axios.get(`${API_URL}/projects.json`)
       .then(response => {
-        setRestaurantsList(response.data["-OAcoLpdhxVFn7lPXMMf"])
+        setRestaurantsList(response.data)
       })
       .catch(e => console.log("Error getting projects from the API...", e));    
     }, []);
