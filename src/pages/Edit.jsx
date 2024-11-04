@@ -14,15 +14,17 @@ function Edit({ restaurants, callBackToEdit }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const restaurantToEdit = restaurants && restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
-    if (restaurantToEdit) {
-      setName(restaurantToEdit.name);
-      setImage(restaurantToEdit.image_url);
-      setAveragePrice(restaurantToEdit.average_price);
-      setDescription(restaurantToEdit.description);
-      setAddress(restaurantToEdit.address);
-      setRating(restaurantToEdit.rating);
-      setType(restaurantToEdit.type);
+    if (restaurants) {
+      const restaurantToEdit = restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
+      if (restaurantToEdit) {
+        setName(restaurantToEdit.name);
+        setImage(restaurantToEdit.image_url);
+        setAveragePrice(restaurantToEdit.average_price);
+        setDescription(restaurantToEdit.description);
+        setAddress(restaurantToEdit.address);
+        setRating(restaurantToEdit.rating);
+        setType(restaurantToEdit.type);
+      }
     }
   }, [restaurantID, restaurants]);
 
@@ -110,7 +112,7 @@ function Edit({ restaurants, callBackToEdit }) {
           Rating:
           <input
             type="number"
-            step="0.1"
+            step="0.5"
             placeholder="Rating"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
