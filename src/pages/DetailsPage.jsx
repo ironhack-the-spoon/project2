@@ -4,12 +4,19 @@ import axios from "axios";
 import { API_URL } from "../config/api";
 import { Link } from "react-router-dom";
 
+
+function getArrayFromObject(data) {
+  return Object.keys(data).map((key) => {
+    return { ...data[key], id: key };
+  });
+}
+
 function DetailsPage() {
   const { restaurantID } = useParams();
   const [restaurantData, setRestaurantData] = useState([]);
   useEffect(() => {
     axios.get(`${API_URL}/projects/${restaurantID}.json`)
-      .then(response => setRestaurantData(response.data["-OAcoLpdhxVFn7lPXMMf"]))
+      .then(response => setRestaurantData(getArrayFromObject(response.data)))
       .catch(e => console.log("Error getting projects from the API...", e));
   }, [restaurantID]);
 
@@ -41,7 +48,9 @@ function DetailsPage() {
 
       <>
         <button>
+          <Link to="/edit/:restaurantID">
           Edit
+          </Link>
         </button>
       </>
 
