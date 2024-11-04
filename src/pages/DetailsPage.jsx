@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/api";
 import { Link } from "react-router-dom";
-
 
 function getArrayFromObject(data) {
   return Object.keys(data).map((key) => {
@@ -13,18 +12,17 @@ function getArrayFromObject(data) {
 
 function DetailsPage() {
   const { restaurantID } = useParams();
-  const [restaurantData, setRestaurantData] = useState([]);
+  const [restaurantData, setRestaurantData] = useState(null);
   useEffect(() => {
-    axios.get(`${API_URL}/projects/${restaurantID}.json`)
-      .then(response => setRestaurantData(getArrayFromObject(response.data)))
-      .catch(e => console.log("Error getting projects from the API...", e));
+    axios
+      .get(`${API_URL}/projects/${restaurantID}.json`)
+      .then((response) => setRestaurantData(getArrayFromObject(response.data)))
+      .catch((e) => console.log("Error getting projects from the API...", e));
   }, [restaurantID]);
 
   if (restaurantData === null) {
     return "Loading...";
   }
-
-
 
   return (
     <div>
@@ -40,20 +38,15 @@ function DetailsPage() {
       </div>
       <>
         <button>
-          <Link to="/">
-            Back
-          </Link>
+          <Link to="/">Back</Link>
         </button>
       </>
 
       <>
         <button>
-          <Link to="/edit/:restaurantID">
-          Edit
-          </Link>
+          <Link to={`/edit/${restaurantID}`}>Edit</Link>
         </button>
       </>
-
     </div>
   );
 }
