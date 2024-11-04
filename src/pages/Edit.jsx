@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 function Edit({ restaurants, callBackToEdit }) {
