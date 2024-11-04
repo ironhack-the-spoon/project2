@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Edit({ restaurants, callBackToEdit }) {
   const [name, setName] = useState("");
@@ -14,7 +14,10 @@ function Edit({ restaurants, callBackToEdit }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const restaurantToEdit = restaurants && restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
+    const restaurantToEdit =
+      restaurants &&
+      restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
+
     if (restaurantToEdit) {
       setName(restaurantToEdit.name);
       setImage(restaurantToEdit.image_url);
