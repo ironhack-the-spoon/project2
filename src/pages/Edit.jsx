@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Edit({ restaurants, callBackToEdit }) {
   const [name, setName] = useState("");
@@ -14,6 +14,7 @@ function Edit({ restaurants, callBackToEdit }) {
   const navigate = useNavigate();
 
   useEffect(() => {
+<<<<<<< HEAD
     if (restaurants) {
       const restaurantToEdit = restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
       if (restaurantToEdit) {
@@ -25,6 +26,20 @@ function Edit({ restaurants, callBackToEdit }) {
         setRating(restaurantToEdit.rating);
         setType(restaurantToEdit.type);
       }
+=======
+    const restaurantToEdit =
+      restaurants &&
+      restaurants.find((restaurant) => restaurant.id === Number(restaurantID));
+
+    if (restaurantToEdit) {
+      setName(restaurantToEdit.name);
+      setImage(restaurantToEdit.image_url);
+      setAveragePrice(restaurantToEdit.average_price);
+      setDescription(restaurantToEdit.description);
+      setAddress(restaurantToEdit.address);
+      setRating(restaurantToEdit.rating);
+      setType(restaurantToEdit.type);
+>>>>>>> origin/main
     }
   }, [restaurantID, restaurants]);
 
