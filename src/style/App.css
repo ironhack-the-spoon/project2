@@ -1,21 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .restaurants-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 16px;
-  }
-  
-  .restaurant-card {
-    border: 1px solid #ddd; 
-    border-radius: 8px;
-    padding: 16px;
-    width: 200px;
-    text-align: center;
-    margin: 10px; 
-  }
-  
-  .restaurant-card h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px;
+}
+
+.restaurant-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 200px;
+  text-align: center;
+  margin: 10px;
+}
+
+.restaurant-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
