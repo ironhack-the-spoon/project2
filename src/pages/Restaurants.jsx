@@ -9,25 +9,31 @@ function getArrayFromObject(data) {
   });
 }
 
-function Restaurants() {
+function Restaurants({ selectedType }) {
   const [restaurantsList, setRestaurantsList] = useState([]);
 
   useEffect(() => {
     axios
       .get(`${API_URL}/projects.json`)
       .then((response) => {
-        setRestaurantsList(getArrayFromObject(response.data));
+        const data = getArrayFromObject(response.data);
+        console.log("Data from API:", data);
+        setRestaurantsList(data);
       })
       .catch((e) => console.log("Error getting projects from the API...", e));
   }, []);
 
-  if (restaurantsList.length === 0) {
-    return <div>Loading...</div>;
+  const filteredRestaurants = restaurantsList.filter(
+    (restaurant) => restaurant.type.toLowerCase() === selectedType.toLowerCase()
+  );
+
+  if (filteredRestaurants.length === 0) {
+    return <div>No restaurants found for {selectedType} cuisine.</div>;
   }
 
   return (
     <div className="restaurants-container">
-      {restaurantsList.map((restaurantDetails) => (
+      {filteredRestaurants.map((restaurantDetails) => (
         <div className="restaurant-card" key={restaurantDetails.id}>
           <img src={restaurantDetails.image_url} alt={restaurantDetails.name} />
           <div className="content">
@@ -40,7 +46,6 @@ function Restaurants() {
               Average Price: {restaurantDetails.average_price}€
             </p>
           </div>
-
           <Link
             to={`/details/${restaurantDetails.id}`}
             className="details-button"

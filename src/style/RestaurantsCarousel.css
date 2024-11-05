@@ -1,0 +1,62 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  flex-direction: row;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.restaurant-card {
+  flex: 0 0 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Carousel */
+
+.carousel-container button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  width: 30px;
+  height: auto;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+  }
+
+  .restaurant-card {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cuisine-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cuisine-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
