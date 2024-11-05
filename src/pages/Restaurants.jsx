@@ -31,17 +31,6 @@ function Restaurants() {
             <Link to={`/details/${restaurantDetails.id}`}>
               <h3>{restaurantDetails.name}</h3>
             </Link>
-            <button
-              onClick={() =>
-                deleteRestaurant(
-                  restaurantDetails.id,
-                  restaurantsList,
-                  setRestaurantsList
-                )
-              }
-            >
-              Delete
-            </button>
           </div>
         );
       })}
