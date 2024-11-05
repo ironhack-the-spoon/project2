@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/api";
 import "../style/RestaurantsCarousel.css";
@@ -50,14 +51,20 @@ function RestaurantsCarousel({ selectedType }) {
         {restaurantsList
           .slice(currentIndex, currentIndex + 3)
           .map((restaurant, index) => (
-            <div className="restaurant-card" key={restaurant.id}>
-              <img src={restaurant.image_url} alt={restaurant.name} />
-              <div className="content">
-                <h3>{restaurant.name}</h3>
-                <p>Type: {restaurant.type}</p>
-                <p>Average Price: {restaurant.average_price}€</p>
+            <Link
+              to={`/details/${restaurant.id}`}
+              key={restaurant.id}
+              className="restaurant-link"
+            >
+              <div className="restaurant-card">
+                <img src={restaurant.image_url} alt={restaurant.name} />
+                <div className="content">
+                  <h3>{restaurant.name}</h3>
+                  <p>Type: {restaurant.type}</p>
+                  <p>Average Price: {restaurant.average_price}€</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
       <button onClick={next} disabled={restaurantsList.length <= 3}>
