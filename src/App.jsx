@@ -14,9 +14,13 @@ import './style/index.css'; // adjust this path if necessary
 
 function App() {
   return (
-    <div>
+    <div className=''>
 
       <Navbar />
+
+
+  
+
 
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
