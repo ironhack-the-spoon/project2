@@ -1,21 +1,93 @@
+/*  CSS for all the restaurants cards  */
 .restaurants-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
   gap: 20px;
   padding: 16px;
 }
 
 .restaurant-card {
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 16px;
-  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   text-align: center;
-  margin: 10px;
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 128px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-card .content {
+  padding: 16px;
 }
 
 .restaurant-card h3 {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.restaurant-card .type {
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.restaurant-card .price {
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* Tittle & Rating on the same line */
+.title-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-rating h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 1rem;
   color: #333;
+}
+
+/* Details button */
+.details-button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #00582b;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #00582b;
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .restaurants-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurants-container {
+    grid-template-columns: 1fr;
+  }
 }

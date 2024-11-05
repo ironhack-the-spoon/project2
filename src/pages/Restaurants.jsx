@@ -8,8 +8,10 @@ function getArrayFromObject(data) {
     return { ...data[key], id: key };
   });
 }
+
 function Restaurants() {
   const [restaurantsList, setRestaurantsList] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${API_URL}/projects.json`)
@@ -20,20 +22,35 @@ function Restaurants() {
   }, []);
 
   if (restaurantsList.length === 0) {
-    return "Load...";
+    return <div>Loading...</div>;
   }
+
   return (
-    <div className="grid grid-cols-3">
-      {restaurantsList.map((restaurantDetails) => {
-        return (
-          <div className="restaurant-card" key={restaurantDetails.id}>
-            <Link to={`/details/${restaurantDetails.id}`}>
+    <div className="restaurants-container">
+      {restaurantsList.map((restaurantDetails) => (
+        <div className="restaurant-card" key={restaurantDetails.id}>
+          <img src={restaurantDetails.image_url} alt={restaurantDetails.name} />
+          <div className="content">
+            <div className="title-rating">
               <h3>{restaurantDetails.name}</h3>
-            </Link>
+              <span className="rating">{restaurantDetails.rating}</span>
+            </div>
+            <p className="type">{restaurantDetails.type}</p>
+            <p className="price">
+              Average Price: {restaurantDetails.average_price}€
+            </p>
           </div>
-        );
-      })}
+
+          <Link
+            to={`/details/${restaurantDetails.id}`}
+            className="details-button"
+          >
+            More Details
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
+
 export default Restaurants;
