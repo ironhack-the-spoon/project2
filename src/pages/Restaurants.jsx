@@ -9,10 +9,8 @@ function getArrayFromObject(data) {
     return { ...data[key], id: key };
   });
 }
-
 function Restaurants() {
   const [restaurantsList, setRestaurantsList] = useState([]);
-
   useEffect(() => {
     axios
       .get(`${API_URL}/projects.json`)
@@ -25,7 +23,6 @@ function Restaurants() {
   if (restaurantsList.length === 0) {
     return "Load...";
   }
-
   return (
     <div className="grid grid-cols-3">
       {restaurantsList.map((restaurantDetails) => {
@@ -51,5 +48,4 @@ function Restaurants() {
     </div>
   );
 }
-
 export default Restaurants;
