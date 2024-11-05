@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import logo from "../images/Logo-the-spoon.png";
+import BurgerMenu from "./BugerMenu";
 
 function Navbar() {
   return (
@@ -7,21 +7,12 @@ function Navbar() {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-20 mr-4 -ml-4" />
+          <img src={logo} alt="Logo" className="h-40 mr-20 -ml-20" />
         </div>
 
-        {/* Navigation link section that will be use for a burger menu */}
-        <div className="flex space-x-5">
-          <Link to="/" className="text-white hover:text-gray-200">
-            Homepage
-          </Link>
-          <Link to="/about" className="text-white hover:text-gray-200">
-            About
-          </Link>
-          <Link to="/add-restaurant" className="text-white hover:text-gray-200">
-            Add Your Restaurant
-          </Link>
-        </div>
+        {/* Burger Menu */}
+        <div className="flex items-center"></div>
+        <BurgerMenu />
       </div>
     </nav>
   );
