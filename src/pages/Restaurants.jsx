@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../config/api";
 import { Link } from "react-router-dom";
-import { deleteRestaurant } from "./DeleteRestaurant";
 
 function getArrayFromObject(data) {
   return Object.keys(data).map((key) => {
@@ -31,17 +30,6 @@ function Restaurants() {
             <Link to={`/details/${restaurantDetails.id}`}>
               <h3>{restaurantDetails.name}</h3>
             </Link>
-            <button
-              onClick={() =>
-                deleteRestaurant(
-                  restaurantDetails.id,
-                  restaurantsList,
-                  setRestaurantsList
-                )
-              }
-            >
-              Delete
-            </button>
           </div>
         );
       })}
