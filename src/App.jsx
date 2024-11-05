@@ -10,6 +10,7 @@ import About from './pages/About'
 import NotFoundPage from './pages/NotFoundPage'
 import Footer from './components/Footer'
 import AddRestaurantPage from "./pages/AddRestaurantPage";
+import './style/index.css'; // adjust this path if necessary
 
 function App() {
   return (
