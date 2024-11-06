@@ -3,7 +3,6 @@ import axios from "axios";
 import { API_URL } from "../config/api";
 import "../style/AddRestaurant.css";
 
-
 function AddRestaurantForm() {
   const [name, setName] = useState("");
   const [address, setaddress] = useState("");

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/api";
-import "../style/RestaurantsCarousel.css";
+import "../style/RestaurantsCarousel";
 import arrowLeft from "../images/arrow-left.png";
 import arrowRight from "../images/arrow-right.png";
 
