@@ -3,17 +3,22 @@ import TheSpoonLight from "../images/the-spoon-light.png";
 import AndroidAppLogo from "../images/Android.png";
 import AppleAppLogo from "../images/Apple.png";
 import GitHubLogo from "../images/githubLogo.png";
+import PageContainer from '../components/PageContainer';
+
 
 function Footer() {
   return (
+
+
     <footer style={{ backgroundColor: "#06402b" }} className="w-full m-0 p-0">
+       <PageContainer>
       <div className="w-full pt-4 md:py-8 pl-6">
         <div className="sm:flex sm:items-center sm:justify-between flex-wrap">
           <div className="flex items-center flex-wrap">
             <a href="/">
               <img src={TheSpoonLight} className="h-16 w-auto mt-0" alt="The Spoon Logo" />
             </a>
-            <p className="text-white text-xs italic mt-5 ml-1 sm:mt-0">Every scoop is better with a spoon.</p>
+            <p className="text-white text-xs italic mt-5 ml-1 sm:mt-0 pt-5">Every scoop is better with a spoon.</p>
           </div>
 
           <ul className="flex flex-wrap items-center mb-1 text-xs font-medium pr-6 text-white sm:mb-0 sm:space-x-6">
@@ -45,6 +50,8 @@ function Footer() {
           </div>
         </div>
       </div>
+
+    </PageContainer>
     </footer>
   );
 }

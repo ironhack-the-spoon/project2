@@ -1,11 +1,15 @@
 import { useState } from "react";
 import SpoonLogo from "../images/the-spoon-light.png";
+import PageContainer from '../components/PageContainer';
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav style={{ backgroundColor: "#06402b" }} className="w-full m-0 p-0">
+          <PageContainer>
+
       <div className="max-w-screen-xl grid grid-cols-3 items-center mx-auto p-4">
         <a href="/" className="col-span-1 flex items-center">
           <img src={SpoonLogo} className="h-24 w-auto" alt="The Spoon Logo" />
@@ -61,6 +65,8 @@ function Navbar() {
           </li>
         </ul>
       </div>
+      </PageContainer>
+
     </nav>
   );
 }

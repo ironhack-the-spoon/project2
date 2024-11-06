@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NotFoundImage from "../images/404.svg";
 import BackArrow from '../assets/images/BackArrow.png';
+import PageContainer from '../components/PageContainer';
+
 
 function NotFoundPage() {
   return (
+    <PageContainer>
+
     <div>
       <button type="button" className="flex items-center">
         <Link to="/" className="focus:outline-none flex items-center pl-6 pt-2">
@@ -17,6 +21,8 @@ function NotFoundPage() {
         <img src={NotFoundImage} className="h-88 w-auto m-8" alt="404 Not Found" />
       </div>
     </div>
+        </PageContainer>
+
   );
 }
 

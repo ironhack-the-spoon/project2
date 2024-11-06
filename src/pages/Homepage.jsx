@@ -5,6 +5,8 @@ import "../style/HomePage.css";
 import frenchImage from "../images/french-cuisine-homepage.jpg";
 import asianImage from "../images/asian-cuisine-homepage.jpg";
 import vegetarianImage from "../images/vegetarian-cuisine-homepage.jpg";
+import PageContainer from '../components/PageContainer';
+
 
 function Homepage() {
   const [selectedType, setSelectedType] = useState(null);
@@ -14,6 +16,7 @@ function Homepage() {
   };
 
   return (
+    <PageContainer>
     <div className="homepage-container">
       <div className="cuisine-cards">
         <div
@@ -54,6 +57,7 @@ function Homepage() {
       </div>
       {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
     </div>
+    </PageContainer>
   );
 }
 
