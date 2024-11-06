@@ -118,7 +118,7 @@ function AddRestaurantForm() {
         />
         <button
           type="submit"
-          className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300"
+          // className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300"
         >
           Add Restaurant
         </button>
