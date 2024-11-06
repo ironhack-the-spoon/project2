@@ -1,26 +1,20 @@
-
-import './style/App.css'
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Homepage from './pages/Homepage'
-import Restaurants from './pages/Restaurants'
-import DetailsPage from './pages/DetailsPage'
-import Michelin from './pages/Michelin'
-import About from './pages/About'
-import NotFoundPage from './pages/NotFoundPage'
-import Footer from './components/Footer'
+import "./style/App.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import Restaurants from "./pages/Restaurants";
+import DetailsPage from "./pages/DetailsPage";
+import Michelin from "./pages/Michelin";
+import About from "./pages/About";
+import NotFoundPage from "./pages/NotFoundPage";
+import Footer from "./components/Footer";
 import AddRestaurantPage from "./pages/AddRestaurantPage";
-import './style/index.css'; // adjust this path if necessary
+import "./style/index.css";
 
 function App() {
   return (
-    <div className=''>
-
+    <div className="">
       <Navbar />
-
-
-  
-
 
       <Routes>
         <Route path="/" element={<Homepage />}></Route>

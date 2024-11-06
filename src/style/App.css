@@ -1,7 +1,7 @@
 /*  CSS for all the restaurants cards  */
 .restaurants-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 16px;
 }
