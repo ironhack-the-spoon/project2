@@ -55,7 +55,7 @@ function AddRestaurantForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-100 shadow-md rounded-lg">
+    <div className="max-w-md mx-auto p-6 bg-beige-light shadow-md rounded-lg">
       <ConfettiCelebration show={showConfetti} />
       <form onSubmit={handleSubmit}>
         <FormField
@@ -118,7 +118,7 @@ function AddRestaurantForm() {
         />
         <button
           type="submit"
-          // className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300"
+          className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300"
         >
           Add Restaurant
         </button>
