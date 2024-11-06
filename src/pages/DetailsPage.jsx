@@ -9,6 +9,8 @@ import IconPrice from '../assets/images/IconPrice.png';
 import BackArrow from '../assets/images/BackArrow.png';
 import EditModal from "../components/EditModal";
 import { deleteRestaurant } from "./DeleteRestaurant";
+import PageContainer from '../components/PageContainer';
+
 
 function DetailsPage() {
   const { restaurantID } = useParams();
@@ -62,6 +64,8 @@ function DetailsPage() {
   };
 
   return (
+    <PageContainer>
+
     <div>
       <button type="button" className="flex items-center">
         <Link to="/" className="focus:outline-none flex items-center pl-6 pt-2">
@@ -197,6 +201,8 @@ function DetailsPage() {
         </form>
       </EditModal>
     </div>
+    </PageContainer>
+
   );
 }
 
