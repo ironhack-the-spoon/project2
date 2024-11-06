@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SpoonLogo from "../images/the-spoon-light.png";
 
 function Navbar() {
@@ -7,29 +8,41 @@ function Navbar() {
   return (
     <nav style={{ backgroundColor: "#06402b" }} className="w-full m-0 p-0">
       <div className="max-w-screen-xl grid grid-cols-3 items-center mx-auto p-4">
-        <a href="/" className="col-span-1 flex items-center">
+        <Link to="/" className="col-span-1 flex items-center">
           <img src={SpoonLogo} className="h-24 w-auto" alt="The Spoon Logo" />
-        </a>
+        </Link>
 
         <div className="hidden w-full md:block col-span-2" id="navbar-default">
           <ul className="font-medium text-sm flex flex-col md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0 mx-auto">
             <li>
-              <a href="#" className="block py-2 px-3 text-white hover:underline">Book a Table</a>
+              <Link
+                to="#"
+                className="block py-2 px-3 text-white hover:underline"
+              >
+                Book a Table
+              </Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-white hover:underline">Add Your Restaurant</a>
+              <Link
+                to="/add-restaurant"
+                className="block py-2 px-3 text-white hover:underline"
+              >
+                Add Your Restaurant
+              </Link>
             </li>
             <li>
-              <a href="/about" className="block py-2 px-3 text-white hover:underline">About Us</a>
+              <Link
+                to="/about"
+                className="block py-2 px-3 text-white hover:underline"
+              >
+                About Us
+              </Link>
             </li>
           </ul>
         </div>
 
         <div className="md:hidden col-span-2 flex justify-end">
-          <button
-            className="text-white"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+          <button className="text-white" onClick={() => setMenuOpen(!menuOpen)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,13 +64,25 @@ function Navbar() {
       <div className={`md:hidden ${menuOpen ? "block" : "hidden"}`}>
         <ul className="font-medium text-sm flex flex-col items-center space-y-4 py-4">
           <li>
-            <a href="#" className="block py-2 px-3 text-white hover:underline">Book a Table</a>
+            <Link to="#" className="block py-2 px-3 text-white hover:underline">
+              Book a Table
+            </Link>
           </li>
           <li>
-            <a href="#" className="block py-2 px-3 text-white hover:underline">Add Your Restaurant</a>
+            <Link
+              to="/add-restaurant"
+              className="block py-2 px-3 text-white hover:underline"
+            >
+              Add Your Restaurant
+            </Link>
           </li>
           <li>
-            <a href="/about" className="block py-2 px-3 text-white hover:underline">About Us</a>
+            <Link
+              to="/about"
+              className="block py-2 px-3 text-white hover:underline"
+            >
+              About Us
+            </Link>
           </li>
         </ul>
       </div>
