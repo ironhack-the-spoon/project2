@@ -13,7 +13,7 @@ import "./style/index.css";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <Navbar />
 
       <Routes>
