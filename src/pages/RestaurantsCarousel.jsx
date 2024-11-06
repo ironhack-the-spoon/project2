@@ -5,6 +5,8 @@ import { API_URL } from "../config/api";
 import "../style/RestaurantsCarousel.css";
 import arrowLeft from "../images/arrow-left.png";
 import arrowRight from "../images/arrow-right.png";
+import iconPrice from "../assets/images/IconPrice.png";
+import iconSpoon from "../assets/images/IconSpoon.png";
 
 function RestaurantsCarousel({ selectedType }) {
   const [restaurantsList, setRestaurantsList] = useState([]);
@@ -72,11 +74,21 @@ function RestaurantsCarousel({ selectedType }) {
               className="restaurant-link"
             >
               <div className="restaurant-card">
-                <img src={restaurant.image_url} alt={restaurant.name} />
+                <img
+                  className="image"
+                  src={restaurant.image_url}
+                  alt={restaurant.name}
+                />
                 <div className="content">
                   <h3>{restaurant.name}</h3>
-                  <p>Type: {restaurant.type}</p>
-                  <p>Average Price: {restaurant.average_price}€</p>
+                  <div className="icon-text">
+                    <img src={iconSpoon} alt="Type Icon" className="icon" />
+                    <span>{restaurant.type}</span>
+                  </div>
+                  <div className="icon-text">
+                    <img src={iconPrice} alt="Price Icon" className="icon" />
+                    <span>{restaurant.average_price}€</span>
+                  </div>
                 </div>
               </div>
             </Link>
