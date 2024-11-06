@@ -2,6 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar{
-    @apply container mx-auto flex items-center justify-between
-}
+@import url('https://fonts.googleapis.com/css2?family=Meera+Inimai&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
