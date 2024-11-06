@@ -3,3 +3,10 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Meera+Inimai&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: "Anton";
+    src: local("Anton-Regular"),
+    url('./assets/fonts/Anton-Regular.ttf') format("truetype");
+}
+
