@@ -1,6 +1,6 @@
 import { useState } from "react";
 import RestaurantsCarousel from "./RestaurantsCarousel";
-import "../style/Homepage";
+import "../style/Homepage.css";
 
 import frenchImage from "../images/french-cuisine-homepage.jpg";
 import asianImage from "../images/asian-cuisine-homepage.jpg";
