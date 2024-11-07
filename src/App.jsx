@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Homepage from "./pages/Homepage";
+import BookTable from "./pages/BookTable";
 
 import Restaurants from "./components/Restaurants";
 import DetailsPage from "./pages/DetailsPage";
@@ -19,6 +20,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
+        <Route path="/book-a-table" element={<BookTable />}></Route>
         <Route path="/restaurants" element={<Restaurants />}></Route>
         <Route path="/details/:restaurantID" element={<DetailsPage />} />
         <Route path="/add-restaurant" element={<AddRestaurantPage />} />

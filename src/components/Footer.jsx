@@ -16,10 +16,10 @@ function Footer() {
             <a href="/">
               <img src={TheSpoonLight} className="h-16 w-auto mt-0" alt="The Spoon Logo" />
             </a>
-            <p className="text-white text-xs italic mt-5 ml-1 ">Every scoop is better with a spoon.</p>
+            <p className="text-beige-light text-xs italic mt-5 ml-1 ">Every scoop is better with a spoon.</p>
           </div>
 
-          <ul className="flex flex-wrap items-start justify-center mb-1 text-xs font-medium m-6 text-white">
+          <ul className="flex flex-wrap items-start justify-center mb-1 text-xs font-medium m-6 text-beige-light">
             <li>
               <Link to="/about" className="hover:underline pr-2">About</Link>
             </li>
@@ -36,7 +36,7 @@ function Footer() {
           <hr className="border-0 lg:my-4 w-full text-start" />
 
           <div className="flex flex-col md:flex-row items-center justify-between mt-4 pl-4">
-            <span className="text-white text-xs text-center md:text-left">
+            <span className="text-beige-light text-xs text-center md:text-left">
               © 2024{" "}
               <a href="/" className="hover:underline">
                 The Spoon
