@@ -6,6 +6,7 @@ import frenchImage from "../images/french-cuisine-homepage.jpg";
 import asianImage from "../images/asian-cuisine-homepage.jpg";
 import vegetarianImage from "../images/vegetarian-cuisine-homepage.jpg";
 import PageContainer from '../components/PageContainer';
+import GoogleMap from "../components/GoogleMap";
 
 
 function Homepage() {
@@ -57,6 +58,7 @@ function Homepage() {
       </div>
       {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
     </div>
+    <GoogleMap></GoogleMap>
     </PageContainer>
   );
 }

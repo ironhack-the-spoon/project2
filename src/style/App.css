@@ -91,3 +91,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.font-link {
+  font-family: 'Anton', sans-serif;
+}

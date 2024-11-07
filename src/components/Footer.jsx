@@ -37,7 +37,7 @@ function Footer() {
         <hr className="border-0 lg:my-4 w-full text-start" />
 
         <div className="flex flex-col md:flex-row items-center justify-between mt-4 pl-4">
-          <span className="text-white text-xs dark:text-gray-400 text-center md:text-left">
+          <span className="text-white text-xs text-center md:text-left">
             © 2024 <a href="/" className="hover:underline">The Spoon</a>. All Rights Reserved.
           </span>
 
