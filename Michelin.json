@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Le Gourmet Moderne",
+    "stars": 3,
+    "address": "16 Rue de l'École, 75005 Paris",
+    "cuisineType": "Modern Cuisine",
+    "description": "Located in the heart of Paris, Le Gourmet Moderne offers a refined dining experience with a focus on innovative dishes that blend traditional French techniques with modern flair. The elegant setting and exceptional service make it a perfect venue for special occasions.",
+    "imageURL": "https://img.freepik.com/free-photo/organic-escargot-appetizer-rustic-wooden-plate-generated-by-ai_188544-35354.jpg?t=st=1730987435~exp=1730991035~hmac=50ee511100a391cb6aa7d1b26861720e294992fe56ff89a5d5f78fc3820706dc&w=1480"
+  },
+  {
+    "id": 2,
+    "name": "La Table Créative",
+    "stars": 2,
+    "address": "5 Avenue Montaigne, 75008 Paris",
+    "cuisineType": "Creative Cuisine",
+    "description": "La Table Créative is a culinary haven for those seeking bold and imaginative dishes. Each plate is a work of art, showcasing the chef's creativity and passion for food. The restaurant's cozy atmosphere and attentive staff ensure a memorable dining experience.",
+    "imageURL": "https://img.freepik.com/free-photo/fresh-aroma-organic-herbs-wood-table-generated-by-ai_188544-29114.jpg?t=st=1730985300~exp=1730988900~hmac=c56cd639d0105489c67565b3dda971d6dcdb0af3cfe0c786064ecef62520e155&w=1480"
+  },
+  {
+    "id": 3,
+    "name": "Bistro du Terroir",
+    "stars": 1,
+    "address": "27 Rue de Rivoli, 75004 Paris",
+    "cuisineType": "Traditional French",
+    "description": "Bistro du Terroir offers a charming escape into the world of classic French cuisine. With a menu featuring hearty and comforting dishes, this restaurant is a favorite among locals and tourists alike. The rustic decor and friendly service create a warm and inviting ambiance.",
+    "imageURL": "https://img.freepik.com/free-photo/view-delicious-steak-dish-with-sauce_23-2150777639.jpg?t=st=1730985549~exp=1730989149~hmac=6b7a8ceb0d44ebfcdec6261f7f7f99e16f96ac5fe5641db7086077ff39ea80b6&w=1480"
+  },
+  {
+    "id": 4,
+    "name": "Le Nouveau Goût",
+    "stars": 3,
+    "address": "19 Rue de la Paix, 75002 Paris",
+    "cuisineType": "Creative Cuisine",
+    "description": "Le Nouveau Goût offers a sophisticated journey into the realm of avant-garde dining. With a menu showcasing innovative and artful dishes, this restaurant is a must-visit for culinary adventurers. The sleek decor and attentive service create a chic and memorable atmosphere.",
+    "imageURL": "https://img.freepik.com/free-photo/view-delicious-dish-food_23-2150777747.jpg?t=st=1730985886~exp=1730989486~hmac=7834dc0f4f84fc92732b9cc832d39ecd930bbc5ec8872164b424507421125be5&w=1380"
+  },
+  {
+    "id": 5,
+    "name": "Cuisine Contemporaine",
+    "stars": 2,
+    "address": "8 Rue Germain, 75005 Paris",
+    "cuisineType": "Modern Cuisine",
+    "description": "Cuisine Contemporaine presents a vibrant exploration of modern gastronomy. With a diverse menu reflecting Paris's eclectic culinary scene, this restaurant attracts a cosmopolitan crowd of food lovers. The stylish interior and refined service provide a truly unique and engaging dining experience.",
+    "imageURL": "https://img.freepik.com/free-photo/delicious-smoke-cooked-food_23-2151259762.jpg?t=st=1730985719~exp=1730989319~hmac=e3ecb9988fcf4ea8d1222b3d084c50b4a24a90f97ad94b17bae2c4218e8ffded&w=1380"
+  },
+  {
+    "id": 6,
+    "name": "L'Art Culinaire",
+    "stars": 1,
+    "address": "45 Rue de la Pompe, 75016 Paris",
+    "cuisineType": "Creative Cuisine",
+    "description": "L'Art Culinaire is a hidden gem in the heart of Paris, known for its inventive dishes and artistic presentation. The intimate setting and dedicated staff provide a personalized dining experience that leaves a lasting impression on every guest.",
+    "imageURL": "https://img.freepik.com/free-photo/colorful-bowl-with-gourmet-indian-dessert-inside-generated-by-ai_188544-11666.jpg?t=st=1730985437~exp=1730989037~hmac=8909306972499e4820a944287c3a967c5e38bc6e7388d2b49f7f63082d8185d0&w=1480"
+  },
+  {
+    "id": 7,
+    "name": "Le Classique",
+    "stars": 2,
+    "address": "30 Rue de la Fayette, 75009 Paris",
+    "cuisineType": "Traditional French",
+    "description": "Le Classique takes pride in its rich culinary heritage, offering a menu of French classics meticulously prepared with the finest, freshest ingredients. The restaurant's elegant decor and warm hospitality effortlessly make it a popular choice for those seeking a genuine taste of authentic French cuisine.",
+    "imageURL": "https://img.freepik.com/free-photo/view-delicious-steak-dish_23-2150777651.jpg?t=st=1730985510~exp=1730989110~hmac=0adc883d15a168746451b1a2c86d3573187106f2f90036b44d9ed66e449b8467&w=1480"
+  },
+  {
+    "id": 8,
+    "name": "Innovations Gourmandes",
+    "stars": 3,
+    "address": "22 Rue de la Boétie, 75008 Paris",
+    "cuisineType": "Modern Cuisine",
+    "description": "Innovations Gourmandes is at the forefront of modern dining, presenting a menu that combines cutting-edge techniques with bold flavors. The restaurant's contemporary setting and expertly crafted dishes offer a dining experience that is both exciting and satisfying.",
+    "imageURL": "https://img.freepik.com/free-photo/close-up-fancy-dessert_23-2150527628.jpg?t=st=1730985749~exp=1730989349~hmac=0857084c206b3c96f9783f1ee7bb1821d0a5bf9844310cedf2938c941186d1e4&w=1380"
+  },
+  {
+    "id": 9,
+    "name": "Authentique Saveurs",
+    "stars": 1,
+    "address": "15 Rue des Martyrs, 75009 Paris",
+    "cuisineType": "Traditional French",
+    "description": "Authentique Saveurs is a beloved Parisian eatery known for its dedication to preserving the authentic flavors of French cuisine. The menu features a selection of traditional dishes, each prepared with care and attention to detail, ensuring a delightful meal for every guest.",
+    "imageURL": "https://img.freepik.com/free-photo/delicious-smoke-cooked-food_23-2151259760.jpg?t=st=1730988270~exp=1730991870~hmac=14441be40a7c09af7f1f24d3411c6a6503e63f5c691fff788ab27e6f88be2086&w=1480"
+  }
+]

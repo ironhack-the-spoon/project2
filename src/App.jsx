@@ -4,7 +4,6 @@ import Homepage from "./pages/Homepage";
 
 import Restaurants from "./components/Restaurants";
 import DetailsPage from "./pages/DetailsPage";
-import Michelin from "./pages/Michelin";
 import About from "./pages/About";
 import NotFoundPage from "./pages/NotFoundPage";
 import Footer from "./components/Footer";
@@ -23,7 +22,6 @@ function App() {
         <Route path="/restaurants" element={<Restaurants />}></Route>
         <Route path="/details/:restaurantID" element={<DetailsPage />} />
         <Route path="/add-restaurant" element={<AddRestaurantPage />} />
-        <Route path="/michelin" element={<Michelin />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
