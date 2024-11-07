@@ -1,7 +1,5 @@
-import React from 'react';
-import IconLocation from '../assets/images/IconLocation.png';
-
 function GoogleMap() {
+
     return (
         <div>
             <div className="mt-6 m-4 flex justify-center items-center">
@@ -24,7 +22,9 @@ function GoogleMap() {
                 </div>
             </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default GoogleMap;

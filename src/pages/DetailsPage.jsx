@@ -2,16 +2,19 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/api";
+
 import StarRating from "../components/StarRating";
-import IconLocation from '../assets/images/IconLocation.png';
-import IconType from '../assets/images/IconSpoon.png';
-import IconPrice from '../assets/images/IconPrice.png';
-import BackArrow from '../assets/images/BackArrow.png';
 import EditModal from "../components/EditModal";
-import { deleteRestaurant } from "./DeleteRestaurant";
-import PageContainer from '../components/PageContainer';
+
+import PageContainer from "../components/PageContainer";
+
+import { deleteRestaurant } from "../components/DeleteRestaurant";
 import FormField from "../components/FormField";
 
+import IconLocation from "../assets/images/IconLocation.png";
+import IconType from "../assets/images/IconSpoon.png";
+import IconPrice from "../assets/images/IconPrice.png";
+import BackArrow from "../assets/images/BackArrow.png";
 
 function DetailsPage() {
   const { restaurantID } = useParams();

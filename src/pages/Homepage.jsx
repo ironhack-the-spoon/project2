@@ -1,15 +1,22 @@
 import { useState } from "react";
-import RestaurantsCarousel from "./RestaurantsCarousel";
+import RestaurantsCarousel from "../components/RestaurantsCarousel";
+import PageContainer from "../components/PageContainer";
+import GoogleMap from "../components/GoogleMap";
+
+import MichelinCarousel from "../components/Michelin";
+
 import "../style/HomePage.css";
 
-import frenchImage from "../images/french-cuisine-homepage.jpg";
-import asianImage from "../images/asian-cuisine-homepage.jpg";
-import vegetarianImage from "../images/vegetarian-cuisine-homepage.jpg";
-import PageContainer from '../components/PageContainer';
-import GoogleMap from "../components/GoogleMap";
 import HowItWorks from "../components/HowItWorks";
 import AddRestaurantBanner from "../components/AddRestaurantBanner";
 
+
+import frenchImage from "../assets/images/homepage-french-cuisine.jpg";
+import asianImage from "../assets/images/homepage-asian-cuisine.jpg";
+import vegetarianImage from "../assets/images/homepage-vegetarian-cuisine.jpg";
+import frenchIcon from "../assets/images/Icon-french.svg";
+import asianIcon from "../assets/images/Icon-asian.svg";
+import vegetarianIcon from "../assets/images/Icon-vegetarian.svg";
 
 function Homepage() {
   const [selectedType, setSelectedType] = useState(null);
@@ -20,7 +27,58 @@ function Homepage() {
 
   return (
     <PageContainer>
-      <HowItWorks>  </HowItWorks>
+<HowItWorks>  </HowItWorks>
+      <div className="homepage-container">
+        <div className="cuisine-cards">
+          <div
+            className={`cuisine-card ${
+              selectedType === "French" ? "selected" : ""
+            }`}
+            onClick={() => handleTypeSelection("French")}
+          >
+            <img
+              src={frenchImage}
+              alt="French Cuisine"
+              className="cuisine-image"
+            />
+            <h2>French</h2>
+            <img src={frenchIcon} alt="French Icon" className="cuisine-icon" />
+          </div>
+          <div
+            className={`cuisine-card ${
+              selectedType === "Asian" ? "selected" : ""
+            }`}
+            onClick={() => handleTypeSelection("Asian")}
+          >
+            <img
+              src={asianImage}
+              alt="Asian Cuisine"
+              className="cuisine-image"
+            />
+            <h2>Asian</h2>
+            <img src={asianIcon} alt="Asian Icon" className="cuisine-icon" />
+          </div>
+          <div
+            className={`cuisine-card ${
+              selectedType === "Vegetarian" ? "selected" : ""
+            }`}
+            onClick={() => handleTypeSelection("Vegetarian")}
+          >
+            <img
+              src={vegetarianImage}
+              alt="Vegetarian Cuisine"
+              className="cuisine-image"
+            />
+            <h2>Vegetarian</h2>
+            <img
+              src={vegetarianIcon}
+              alt="Vegetarian Icon"
+              className="cuisine-icon"
+            />
+          </div>
+
+
+      
     <div className="homepage-container">
     <h2 className="text-3xl font-semibold text-left text-customGreen mb-8">
     Grab a spoon and dive into our diverse cuisines        </h2>
@@ -60,9 +118,10 @@ function Homepage() {
           />
           <h2>Vegetarian</h2>
         </div>
+        {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
       </div>
-      {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
-    </div>
+      <MichelinCarousel />
+    
     <GoogleMap></GoogleMap>
     <AddRestaurantBanner></AddRestaurantBanner>
     </PageContainer>

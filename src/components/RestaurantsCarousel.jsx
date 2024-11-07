@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/api";
+
+import "../style/RestaurantsCards.css";
 import "../style/RestaurantsCarousel.css";
-import arrowLeft from "../images/arrow-left.png";
-import arrowRight from "../images/arrow-right.png";
+
+import arrowLeft from "../assets/images/carousel-arrow-left.png";
+import arrowRight from "../assets/images/carousel-arrow-right.png";
 import iconPrice from "../assets/images/IconPrice.png";
 import iconSpoon from "../assets/images/IconSpoon.png";
 

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SpoonLogo from "../images/the-spoon-light.png";
-import PageContainer from '../components/PageContainer';
-
+import PageContainer from "../components/PageContainer";
+import SpoonLogo from "../assets/images/Logo-the-spoon-light.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

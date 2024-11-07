@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Le Gourmet Moderne",
+    "stars": 3,
+    "address": "16 Rue de l'École, 75005 Paris",
+    "cuisineType": "Modern Cuisine",
+    "description": "Located in the heart of Paris, Le Gourmet Moderne offers a refined dining experience with a focus on innovative dishes that blend traditional French techniques with modern flair. The elegant setting and exceptional service make it a perfect venue for special occasions.",
+    "imageURL": "https://img.freepik.com/free-photo/organic-escargot-appetizer-rustic-wooden-plate-generated-by-ai_188544-35354.jpg?t=st=1730987435~exp=1730991035~hmac=50ee511100a391cb6aa7d1b26861720e294992fe56ff89a5d5f78fc3820706dc&w=1480"
+  },
+  {
+    "id": 2,
+    "name": "La Table Créative",
+    "stars": 2,
+    "address": "5 Avenue Montaigne, 75008 Paris",
+    "cuisineType": "Creative Cuisine",
+    "description": "La Table Créative is a culinary haven for those seeking bold and imaginative dishes. Each plate is a work of art, showcasing the chef's creativity and passion for food. The restaurant's cozy atmosphere and attentive staff ensure a memorable dining experience.",
+    "imageURL": "https://img.freepik.com/free-photo/fresh-aroma-organic-herbs-wood-table-generated-by-ai_188544-29114.jpg?t=st=1730985300~exp=1730988900~hmac=c56cd639d0105489c67565b3dda971d6dcdb0af3cfe0c786064ecef62520e155&w=1480"
+  },
+  {
+    "id": 3,
+    "name": "Bistro du Terroir",
+    "stars": 1,
+    "address": "27 Rue de Rivoli, 75004 Paris",
+    "cuisineType": "Traditional French",
+    "description": "Bistro du Terroir offers a charming escape into the world of classic French cuisine. With a menu featuring hearty and comforting dishes, this restaurant is a favorite among locals and tourists alike. The rustic decor and friendly service create a warm and inviting ambiance.",
+    "imageURL": "https://img.freepik.com/free-photo/view-delicious-steak-dish-with-sauce_23-2150777639.jpg?t=st=1730985549~exp=1730989149~hmac=6b7a8ceb0d44ebfcdec6261f7f7f99e16f96ac5fe5641db7086077ff39ea80b6&w=1480"
+  }
+]

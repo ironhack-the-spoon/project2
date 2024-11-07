@@ -3,7 +3,7 @@ function OurCulinaryQuest() {
     <section className="about-mission mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-lg text-center">
       <div className="flex flex-col items-center mb-4">
         <img
-          src="src/images/about-quest.png"
+          src="src/assets/images/about-quest.png"
           alt="Culinary Quest Icon"
           className="w-16 h-16 mb-2"
         />

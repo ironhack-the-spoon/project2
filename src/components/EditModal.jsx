@@ -1,5 +1,3 @@
-import React from "react";
-
 function EditModal({ show, onClose, children }) {
   if (!show) return null;
 
