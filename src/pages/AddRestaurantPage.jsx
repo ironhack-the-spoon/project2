@@ -56,12 +56,6 @@ function AddRestaurantPage() {
         Spill the beans about your restaurant:
       </h1>
       <AddRestaurantForm onNewRestaurant={handleNewRestaurant} />
-      <RestaurantsCarousel
-        restaurants={restaurants.filter(
-          (restaurant) => restaurant.type === selectedType
-        )}
-        selectedType={selectedType}
-      />
     </div>
   );
 }
