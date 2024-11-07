@@ -11,13 +11,13 @@ function Navbar() {
     <nav style={{ backgroundColor: "#06402b" }} className="w-full m-0 p-0">
           <PageContainer>
 
-      <div className="max-w-screen-xl grid grid-cols-3 items-center mx-auto p-4">
+      <div className="max-w-screen-xl grid grid-cols-3 justify-start items-center">
         <Link to="/" className="col-span-1 flex items-center">
-          <img src={SpoonLogo} className="h-24 w-auto" alt="The Spoon Logo" />
+          <img src={SpoonLogo} className="h-36" alt="The Spoon Logo" />
         </Link>
 
-        <div className="hidden w-full md:block col-span-2" id="navbar-default">
-          <ul className="font-medium text-sm flex flex-col md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0 mx-auto">
+        <div className="hidden w-full md:block col-span-2 item-center" id="navbar-default">
+          <ul className="font-medium text-2xl flex flex-col md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0 mx-auto">
             <li>
               <Link
                 to="#"
@@ -45,7 +45,7 @@ function Navbar() {
           </ul>
         </div>
 
-        <div className="md:hidden col-span-2 flex justify-end">
+        <div className="md:hidden col-span-2 flex justify-end pr-6">
           <button className="text-white" onClick={() => setMenuOpen(!menuOpen)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
