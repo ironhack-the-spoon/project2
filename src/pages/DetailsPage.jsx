@@ -9,6 +9,8 @@ import IconPrice from '../assets/images/IconPrice.png';
 import BackArrow from '../assets/images/BackArrow.png';
 import EditModal from "../components/EditModal";
 import { deleteRestaurant } from "./DeleteRestaurant";
+import PageContainer from '../components/PageContainer';
+
 
 function DetailsPage() {
   const { restaurantID } = useParams();
@@ -62,8 +64,10 @@ function DetailsPage() {
   };
 
   return (
+    <PageContainer>
+
     <div>
-      <button type="button" className="flex items-center">
+      <button type="button" className="flex items-center pb-4 pt-4">
         <Link to="/" className="focus:outline-none flex items-center pl-6 pt-2">
           <img src={BackArrow} alt="Back Arrow" className="w-4 h-4" />
           <p className="pl-1 text-xs">Back</p>
@@ -106,7 +110,7 @@ function DetailsPage() {
           {restaurantData.type}
         </p>
 
-        <div className="flex mt-4">
+        <div className="flex mt-10 mb-10">
           <button
             onClick={() => setShowEditModal(true)}
             type="button"
@@ -197,6 +201,8 @@ function DetailsPage() {
         </form>
       </EditModal>
     </div>
+    </PageContainer>
+
   );
 }
 
