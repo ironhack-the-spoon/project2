@@ -2,7 +2,7 @@ import { useState } from "react";
 import RestaurantsCarousel from "../components/RestaurantsCarousel";
 import PageContainer from "../components/PageContainer";
 import GoogleMap from "../components/GoogleMap";
-import MichelinCarousel from "../components/Michelin";
+import MichelinBanners from "../components/Michelin";
 import HowItWorks from "../components/HowItWorks";
 import AddRestaurantBanner from "../components/AddRestaurantBanner";
 
@@ -78,7 +78,7 @@ function Homepage() {
           </div>
         </div>
         {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
-        <MichelinCarousel />
+        <MichelinBanners />
       </div>
       <GoogleMap />
       <AddRestaurantBanner />
