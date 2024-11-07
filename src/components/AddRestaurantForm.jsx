@@ -4,12 +4,12 @@ import { API_URL } from "../config/api";
 import ConfettiCelebration from "./ConfettiCelebration";
 import FormField from "./FormField";
 
-function AddRestaurantForm() {
+function AddRestaurantForm({ onNewRestaurant }) {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
-  const [cuisine, setCuisine] = useState("French");
-  const [averagePrice, setAveragePrice] = useState("");
+  const [type, setType] = useState("French");
+  const [average_price, setAverage_price] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [rating, setRating] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
@@ -21,8 +21,8 @@ function AddRestaurantForm() {
       name,
       address,
       description,
-      cuisine,
-      averagePrice,
+      type,
+      average_price,
       image_url: imageUrl,
       rating,
     };
@@ -31,13 +31,14 @@ function AddRestaurantForm() {
       .post(`${API_URL}/projects.json`, newRestaurant)
       .then((response) => {
         console.log("Restaurant added:", response.data);
+        onNewRestaurant(response.data);
 
         // Reset the form
         setName("");
         setAddress("");
         setDescription("");
-        setCuisine("French");
-        setAveragePrice("");
+        setType("French");
+        setAverage_price("");
         setImageUrl("");
         setRating("");
 
@@ -80,10 +81,10 @@ function AddRestaurantForm() {
           required
         />
         <FormField
-          label="Cuisine"
+          label="Type"
           type="select"
-          value={cuisine}
-          onChange={(e) => setCuisine(e.target.value)}
+          value={type}
+          onChange={(e) => setType(e.target.value)}
           options={[
             { value: "French", label: "French" },
             { value: "Asian", label: "Asian" },
@@ -94,11 +95,11 @@ function AddRestaurantForm() {
         <FormField
           label="Average Price (€)"
           type="number"
-          value={averagePrice}
-          onChange={(e) => setAveragePrice(e.target.value)}
+          value={average_price}
+          onChange={(e) => setAverage_price(Number(e.target.value))}
           required
-          min="0"
-          step="1"
+          min={0}
+          step={1}
         />
         <FormField
           label="Image URL"
@@ -110,11 +111,11 @@ function AddRestaurantForm() {
           label="Rating"
           type="number"
           value={rating}
-          onChange={(e) => setRating(e.target.value)}
+          onChange={(e) => setRating(Number(e.target.value))}
           required
-          min="0"
-          max="5"
-          step="0.5"
+          min={0}
+          max={5}
+          step={0.5}
         />
         <button
           type="submit"

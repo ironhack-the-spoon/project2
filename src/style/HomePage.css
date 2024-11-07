@@ -1,6 +1,9 @@
 .homepage-container {
   text-align: center;
   padding: 60px 20px;
+  background-color: white;
+
+
 }
 
 .cuisine-cards {
@@ -14,7 +17,7 @@
   width: 300px;
   height: 400px;
   padding: 40px;
-  background-color: #fff;
+  background-color: #faf2ea;
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
