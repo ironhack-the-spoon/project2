@@ -2,7 +2,7 @@ function OurTeam() {
   return (
     <section className="about-team mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col items-center text-center">
       <img
-        src="src/images/about-team.png"
+        src="src/assets/images/about-team.png"
         alt="Team Icon"
         className="w-16 h-16 mb-4"
       />
