@@ -1,11 +1,12 @@
 import React from 'react';
 import RestaurantsList from '../components/RestaurantsList';
+import PageContainer from '../components/PageContainer';
 
 function BookTable() {
   return (
-    <div>
+    <PageContainer>
       <RestaurantsList />
-    </div>
+    </PageContainer>
   );
 }
 
