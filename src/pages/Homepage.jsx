@@ -7,6 +7,8 @@ import asianImage from "../images/asian-cuisine-homepage.jpg";
 import vegetarianImage from "../images/vegetarian-cuisine-homepage.jpg";
 import PageContainer from '../components/PageContainer';
 import GoogleMap from "../components/GoogleMap";
+import HowItWorks from "../components/HowItWorks";
+import AddRestaurantBanner from "../components/AddRestaurantBanner";
 
 
 function Homepage() {
@@ -18,7 +20,10 @@ function Homepage() {
 
   return (
     <PageContainer>
+      <HowItWorks>  </HowItWorks>
     <div className="homepage-container">
+    <h2 className="text-3xl font-semibold text-left text-customGreen mb-8">
+    Grab a spoon and dive into our diverse cuisines        </h2>
       <div className="cuisine-cards">
         <div
           className={`cuisine-card ${
@@ -59,6 +64,7 @@ function Homepage() {
       {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
     </div>
     <GoogleMap></GoogleMap>
+    <AddRestaurantBanner></AddRestaurantBanner>
     </PageContainer>
   );
 }

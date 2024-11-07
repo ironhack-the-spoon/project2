@@ -4,21 +4,22 @@ import IconLocation from '../assets/images/IconLocation.png';
 function GoogleMap() {
     return (
         <div>
-            <div className="text-start mt-6 mb-4 flex items-center">
-
-                <h1 className="text-xl  text-customGreen">
-                📍 The Ultimate Guide to Restaurants in Paris
+            <div className="mt-6 m-4 flex justify-center items-center">
+                <h1
+                    className="text-2xl w-full h-24 shadow-lg rounded-lg text-beige-light text-center flex justify-start pl-4 font-bold items-center"
+                    style={{ backgroundColor: '#06402B' }} 
+                >
+                    📍 The Ultimate Guide to Restaurants in Paris
                 </h1>
             </div>
-            <div className="flex justify-start items-center pb-12">
+            <div className="flex justify-start items-center m-4 pb-8">
                 <div style={{ width: '100%', overflow: 'hidden', height: '480px', borderRadius: '12px' }}>
                     <iframe
                         src="https://www.google.com/maps/d/embed?mid=1CGYxEFC2Knx62PKd_KoKODyljNEvAtk&ehbc=2E312F&no_toolbar=true"
-                        width="100%"  // Full width of the container
-                        height="600"  // Larger height to accommodate hiding top and bottom parts
-                        className="border-0 shadow-lg"
-                        style={{ marginTop: '-150px', borderRadius: '12px' }}  // Apply border radius to iframe
-                        loading="lazy"
+                        width="100%" 
+                        height="600"
+                        className="border-0"
+                        style={{ marginTop: '-150px', borderRadius: '12px' }}
                     ></iframe>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import BackArrow from '../assets/images/BackArrow.png';
 import EditModal from "../components/EditModal";
 import { deleteRestaurant } from "./DeleteRestaurant";
 import PageContainer from '../components/PageContainer';
+import FormField from "../components/FormField";
 
 
 function DetailsPage() {
@@ -121,7 +122,7 @@ function DetailsPage() {
           <button
             onClick={handleDelete}
             type="button"
-            className="text-red-500 bg-[#D1D5DB] border border-[#D1D5DB] focus:outline-none hover:bg-[#E5E7EB] focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
+            className="text-red-900 bg-red-200 border border-[#D1D5DB] focus:outline-none hover:bg-red-100 focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
           >
             Delete
           </button>
@@ -129,77 +130,87 @@ function DetailsPage() {
       </div>
 
       <EditModal show={showEditModal} onClose={() => setShowEditModal(false)}>
-        <form className="bg-gray-100 p-4 rounded-md mt-4">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={restaurantEdit.name}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          />
-          <label htmlFor="rating">Rating</label>
-          <input
-            type="number"
-            name="rating"
-            placeholder="rating"
-            min="0"
-            max="5"
-            step="0.5"
-            value={restaurantEdit.rating}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          />
-          <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            name="description"
-            placeholder="description"
-            value={restaurantEdit.description}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          />
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            name="address"
-            placeholder="address"
-            value={restaurantEdit.address}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          />
-          <label htmlFor="average_price">Average Price</label>
-          <input
-            type="number"
-            name="average_price"
-            placeholder="average price"
-            min="0"
-            value={restaurantEdit.average_price}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          />
-          <label htmlFor="type">Type</label>
-          <select
-            name="type"
-            value={restaurantEdit.type}
-            onChange={handleChange}
-            className="block mb-2 p-1 border rounded"
-          >
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="French">French</option>
-            <option value="Asian">Asian</option>
-          </select>
-          <div className="flex justify-end">
-            <button onClick={() => setShowEditModal(false)} className="text-red-500 mr-4">
-              Cancel
-            </button>
-            <button onClick={handleSave} className="text-green-500 mr-4">
-              Save
-            </button>
-          </div>
-        </form>
-      </EditModal>
+  <form className="max-w-md mx-auto p-6 bg-beige-light shadow-md rounded-lg mt-4">
+    <FormField
+      label="Name"
+      type="text"
+      value={restaurantEdit.name}
+      onChange={handleChange}
+      name="name"
+      placeholder="name"
+      required
+    />
+    <FormField
+      label="Rating"
+      type="number"
+      value={restaurantEdit.rating}
+      onChange={handleChange}
+      name="rating"
+      placeholder="rating"
+      min="0"
+      max="5"
+      step="0.5"
+      required
+    />
+    <FormField
+      label="Description"
+      type="textarea"
+      value={restaurantEdit.description}
+      onChange={handleChange}
+      name="description"
+      placeholder="description"
+      required
+    />
+    <FormField
+      label="Address"
+      type="text"
+      value={restaurantEdit.address}
+      onChange={handleChange}
+      name="address"
+      placeholder="address"
+      required
+    />
+    <FormField
+      label="Average Price (€)"
+      type="number"
+      value={restaurantEdit.average_price}
+      onChange={handleChange}
+      name="average_price"
+      placeholder="average price"
+      min="0"
+      step="1"
+      required
+    />
+    <FormField
+      label="Cuisine Type"
+      type="select"
+      value={restaurantEdit.type}
+      onChange={handleChange}
+      name="type"
+      options={[
+        { value: "Vegetarian", label: "Vegetarian" },
+        { value: "French", label: "French" },
+        { value: "Asian", label: "Asian" },
+      ]}
+      required
+    />
+    <div className="flex space-between m-4">
+    <button
+        onClick={handleSave}
+        className="text-white w-60 bg-green-700 px-4 py-2 ml-2 h-10 m-1 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300"
+      >
+        Save
+      </button>
+      <button
+        onClick={() => setShowEditModal(false)}
+        className="text-red-900 w-60 bg-red-200 px-4 py-2 rounded-md h-10 m-1 hover:bg-red-100 focus:outline-none focus:ring focus:border-red-300"
+      >
+        Cancel
+      </button>
+
+    </div>
+  </form>
+</EditModal>
     </div>
     </PageContainer>
 
