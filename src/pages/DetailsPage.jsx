@@ -5,9 +5,11 @@ import { API_URL } from "../config/api";
 
 import StarRating from "../components/StarRating";
 import EditModal from "../components/EditModal";
+
 import PageContainer from "../components/PageContainer";
 
 import { deleteRestaurant } from "../components/DeleteRestaurant";
+import FormField from "../components/FormField";
 
 import IconLocation from "../assets/images/IconLocation.png";
 import IconType from "../assets/images/IconSpoon.png";
@@ -19,7 +21,7 @@ function DetailsPage() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [restaurantData, setRestaurantData] = useState(null);
   const [restaurantEdit, setRestaurantEdit] = useState(null);
-  const [restaurantsList, setRestaurantsList] = useState([]);
+  const [restaurantsList, setRestaurantsList] = useState([]); 
 
   useEffect(() => {
     axios
@@ -55,9 +57,7 @@ function DetailsPage() {
       })
       .catch((error) => {
         console.error("Error updating restaurant:", error);
-        alert(
-          "An error occurred while updating the restaurant. Please try again."
-        );
+        alert("An error occurred while updating the restaurant. Please try again.");
       });
   };
 
@@ -69,150 +69,154 @@ function DetailsPage() {
 
   return (
     <PageContainer>
-      <div>
-        <button type="button" className="flex items-center pb-4 pt-4">
-          <Link
-            to="/"
-            className="focus:outline-none flex items-center pl-6 pt-2"
-          >
-            <img src={BackArrow} alt="Back Arrow" className="w-4 h-4" />
-            <p className="pl-1 text-xs">Back</p>
-          </Link>
-        </button>
 
-        <div className="restaurant-detail bg-white rounded-lg pt-2 pl-6 pr-6">
-          <img
-            src={restaurantData.image_url}
-            alt={restaurantData.name}
-            className="w-full h-64 object-cover rounded-lg mb-4"
-          />
-          <div className="flex justify-between items-center">
-            <h3 className="text-xl font-bold mb-2">{restaurantData.name}</h3>
-            <StarRating rating={restaurantData.rating} />
-          </div>
-          <p className="text-gray-700 pt-2 pb-6">
-            {restaurantData.description}
-          </p>
-          <p className="text-gray-700 flex items-center pb-3">
-            <img
-              src={IconLocation}
-              alt="Icon Location"
-              className="w-6 h-6 object-cover rounded-md mr-2"
-            />
-            {restaurantData.address}
-          </p>
-          <p className="text-gray-700 flex items-center pb-3">
-            <img
-              src={IconPrice}
-              alt="Icon Price"
-              className="w-6 h-6 object-cover rounded-md mr-2"
-            />
-            Average price {restaurantData.average_price}€
-          </p>
-          <p className="text-gray-700 flex items-center">
-            <img
-              src={IconType}
-              alt="Icon Type"
-              className="w-6 h-6 object-cover rounded-md mr-2"
-            />
-            {restaurantData.type}
-          </p>
+    <div>
+      <button type="button" className="flex items-center pb-4 pt-4">
+        <Link to="/" className="focus:outline-none flex items-center pl-6 pt-2">
+          <img src={BackArrow} alt="Back Arrow" className="w-4 h-4" />
+          <p className="pl-1 text-xs">Back</p>
+        </Link>
+      </button>
 
-          <div className="flex mt-10 mb-10">
-            <button
-              onClick={() => setShowEditModal(true)}
-              type="button"
-              className="text-[#374151] bg-[#D1D5DB] border border-[#D1D5DB] focus:outline-none hover:bg-[#E5E7EB] focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 me-2 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
-            >
-              Edit
-            </button>
-            <button
-              onClick={handleDelete}
-              type="button"
-              className="text-red-500 bg-[#D1D5DB] border border-[#D1D5DB] focus:outline-none hover:bg-[#E5E7EB] focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
-            >
-              Delete
-            </button>
-          </div>
+      <div className="restaurant-detail bg-white rounded-lg pt-2 pl-6 pr-6">
+        <img
+          src={restaurantData.image_url}
+          alt={restaurantData.name}
+          className="w-full h-64 object-cover rounded-lg mb-4"
+        />
+        <div className="flex justify-between items-center">
+          <h3 className="text-xl font-bold mb-2">{restaurantData.name}</h3>
+          <StarRating rating={restaurantData.rating} />
         </div>
+        <p className="text-gray-700 pt-2 pb-6">{restaurantData.description}</p>
+        <p className="text-gray-700 flex items-center pb-3">
+          <img
+            src={IconLocation}
+            alt="Icon Location"
+            className="w-6 h-6 object-cover rounded-md mr-2"
+          />
+          {restaurantData.address}
+        </p>
+        <p className="text-gray-700 flex items-center pb-3">
+          <img
+            src={IconPrice}
+            alt="Icon Price"
+            className="w-6 h-6 object-cover rounded-md mr-2"
+          />
+          Average price {restaurantData.average_price}€
+        </p>
+        <p className="text-gray-700 flex items-center">
+          <img
+            src={IconType}
+            alt="Icon Type"
+            className="w-6 h-6 object-cover rounded-md mr-2"
+          />
+          {restaurantData.type}
+        </p>
 
-        <EditModal show={showEditModal} onClose={() => setShowEditModal(false)}>
-          <form className="bg-gray-100 p-4 rounded-md mt-4">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="name"
-              value={restaurantEdit.name}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            />
-            <label htmlFor="rating">Rating</label>
-            <input
-              type="number"
-              name="rating"
-              placeholder="rating"
-              min="0"
-              max="5"
-              step="0.5"
-              value={restaurantEdit.rating}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            />
-            <label htmlFor="description">Description</label>
-            <input
-              type="text"
-              name="description"
-              placeholder="description"
-              value={restaurantEdit.description}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            />
-            <label htmlFor="address">Address</label>
-            <input
-              type="text"
-              name="address"
-              placeholder="address"
-              value={restaurantEdit.address}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            />
-            <label htmlFor="average_price">Average Price</label>
-            <input
-              type="number"
-              name="average_price"
-              placeholder="average price"
-              min="0"
-              value={restaurantEdit.average_price}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            />
-            <label htmlFor="type">Type</label>
-            <select
-              name="type"
-              value={restaurantEdit.type}
-              onChange={handleChange}
-              className="block mb-2 p-1 border rounded"
-            >
-              <option value="Vegetarian">Vegetarian</option>
-              <option value="French">French</option>
-              <option value="Asian">Asian</option>
-            </select>
-            <div className="flex justify-end">
-              <button
-                onClick={() => setShowEditModal(false)}
-                className="text-red-500 mr-4"
-              >
-                Cancel
-              </button>
-              <button onClick={handleSave} className="text-green-500 mr-4">
-                Save
-              </button>
-            </div>
-          </form>
-        </EditModal>
+        <div className="flex mt-10 mb-10">
+          <button
+            onClick={() => setShowEditModal(true)}
+            type="button"
+            className="text-[#374151] bg-[#D1D5DB] border border-[#D1D5DB] focus:outline-none hover:bg-[#E5E7EB] focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 me-2 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
+          >
+            Edit
+          </button>
+          <button
+            onClick={handleDelete}
+            type="button"
+            className="text-red-900 bg-red-200 border border-[#D1D5DB] focus:outline-none hover:bg-red-100 focus:ring-4 focus:ring-[#E5E7EB] font-medium rounded-md text-sm px-4 py-1 mb-2 dark:bg-[#4B5563] dark:text-[#F9FAFB] dark:border-[#6B7280] dark:hover:bg-[#374151] dark:hover:border-[#6B7280] dark:focus:ring-[#6B7280]"
+          >
+            Delete
+          </button>
+        </div>
       </div>
+
+      <EditModal show={showEditModal} onClose={() => setShowEditModal(false)}>
+  <form className="max-w-md mx-auto p-6 bg-beige-light shadow-md rounded-lg mt-4">
+    <FormField
+      label="Name"
+      type="text"
+      value={restaurantEdit.name}
+      onChange={handleChange}
+      name="name"
+      placeholder="name"
+      required
+    />
+    <FormField
+      label="Rating"
+      type="number"
+      value={restaurantEdit.rating}
+      onChange={handleChange}
+      name="rating"
+      placeholder="rating"
+      min="0"
+      max="5"
+      step="0.5"
+      required
+    />
+    <FormField
+      label="Description"
+      type="textarea"
+      value={restaurantEdit.description}
+      onChange={handleChange}
+      name="description"
+      placeholder="description"
+      required
+    />
+    <FormField
+      label="Address"
+      type="text"
+      value={restaurantEdit.address}
+      onChange={handleChange}
+      name="address"
+      placeholder="address"
+      required
+    />
+    <FormField
+      label="Average Price (€)"
+      type="number"
+      value={restaurantEdit.average_price}
+      onChange={handleChange}
+      name="average_price"
+      placeholder="average price"
+      min="0"
+      step="1"
+      required
+    />
+    <FormField
+      label="Cuisine Type"
+      type="select"
+      value={restaurantEdit.type}
+      onChange={handleChange}
+      name="type"
+      options={[
+        { value: "Vegetarian", label: "Vegetarian" },
+        { value: "French", label: "French" },
+        { value: "Asian", label: "Asian" },
+      ]}
+      required
+    />
+    <div className="flex space-between m-4">
+    <button
+        onClick={handleSave}
+        className="text-white w-60 bg-green-700 px-4 py-2 ml-2 h-10 m-1 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300"
+      >
+        Save
+      </button>
+      <button
+        onClick={() => setShowEditModal(false)}
+        className="text-red-900 w-60 bg-red-200 px-4 py-2 rounded-md h-10 m-1 hover:bg-red-100 focus:outline-none focus:ring focus:border-red-300"
+      >
+        Cancel
+      </button>
+
+    </div>
+  </form>
+</EditModal>
+    </div>
     </PageContainer>
+
   );
 }
 
