@@ -1,10 +1,10 @@
-## The Spoon
+# The Spoon
 
 Welcome to The Spoon, an interactive web application designed for food enthusiasts looking to explore Parisian restaurants. This project is built using React, JavaScript, HTML, and CSS.
 
 ## Features
 
-# Home Page
+### Home Page
 
 1. Categories: Browse through three main food categories - French, Asian, and Vegetarian.
 
@@ -23,7 +23,20 @@ Welcome to The Spoon, an interactive web application designed for food enthusias
 
 If you own a restaurant that fits one of our categories, you can add it to our database. Once approved, it will be visible in the relevant category carousel.
 
-# Navigation
+### Navigation
 
 - Add Your Restaurant: Direct access to the page where restaurant owners can submit their establishment for inclusion in the app.
 - About The Spoon: Learn more about the application, its purpose, and functionality through this dedicated page.
+- Book a table!
+
+## Instructions to run this app in my computer.
+
+git clone
+how to install dependencies (npm install)
+
+- Tailwind
+- React confetti
+
+## Demo
+
+https://the-spoon.netlify.app/
