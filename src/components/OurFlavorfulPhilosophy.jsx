@@ -1,20 +1,24 @@
+import AboutTasteImg from "../assets/images/about-taste.png";
+import AboutSnackImg from "../assets/images/about-snacktastic.png";
+import AboutDineImg from "../assets/images/about-dine.png";
+
 function OurFlavorfulPhilosophy() {
   const items = [
     {
-      imgSrc: "src/assets/images/about-taste.png",
+      imgSrc: AboutTasteImg,
       altText: "Taste Bud Besties Icon",
       title: "Taste Bud Besties",
       description: "We customize every flavor journey to your cravings!",
     },
     {
-      imgSrc: "src/assets/images/about-snacktastic.png",
+      imgSrc: AboutSnackImg,
       altText: "Snacktastic Surprises Icon",
       title: "Snacktastic Surprises",
       description:
         "Expect delightful taste discoveries that will brighten your day!",
     },
     {
-      imgSrc: "src/assets/images/about-dine.png",
+      imgSrc: AboutDineImg,
       altText: "Dine & Shine Icon",
       title: "Dine & Shine",
       description: "Each meal leaves you shining with satisfaction!",

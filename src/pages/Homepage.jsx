@@ -2,10 +2,13 @@ import { useState } from "react";
 import RestaurantsCarousel from "../components/RestaurantsCarousel";
 import PageContainer from "../components/PageContainer";
 import GoogleMap from "../components/GoogleMap";
-import MichelinCarousel from "../components/Michelin";
+
+import MichelinBanners from "../components/Michelin";
 import HowItWorks from "../components/HowItWorks";
 import AddRestaurantBanner from "../components/AddRestaurantBanner";
+
 import "../style/HomePage.css";
+
 import frenchImage from "../assets/images/homepage-french-cuisine.jpg";
 import asianImage from "../assets/images/homepage-asian-cuisine.jpg";
 import vegetarianImage from "../assets/images/homepage-vegetarian-cuisine.jpg";
@@ -13,11 +16,14 @@ import frenchIcon from "../assets/images/Icon-french.svg";
 import asianIcon from "../assets/images/Icon-asian.svg";
 import vegetarianIcon from "../assets/images/Icon-vegetarian.svg";
 import MoreDetails from "../components/MoreDetails";
+
 function Homepage() {
   const [selectedType, setSelectedType] = useState(null);
+
   const handleTypeSelection = (type) => {
     setSelectedType((prevType) => (prevType === type ? null : type));
   };
+
   return (
     <PageContainer>
       <HowItWorks />
@@ -74,12 +80,14 @@ function Homepage() {
           </div>
         </div>
         {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
-        <MichelinCarousel />
       </div>
+
+      <MichelinBanners />
       <GoogleMap />
       <MoreDetails />
       <AddRestaurantBanner />
     </PageContainer>
   );
 }
+
 export default Homepage;

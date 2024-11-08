@@ -1,7 +1,7 @@
 function GoogleMap() {
   return (
     <div>
-      <div className="mr-4 ml-4 flex justify-center items-center mb-4">
+      <div className="mt-6 m-4 flex justify-center items-center">
         <h1
           className="text-2xl w-full h-24 shadow-lg rounded-lg text-beige-light text-center flex justify-start pl-4 font-bold items-center"
           style={{ backgroundColor: "#06402B" }}
@@ -10,6 +10,7 @@ function GoogleMap() {
         </h1>
       </div>
       <div className="flex justify-start items-center mr-4 ml-4">
+
         <div
           style={{
             width: "100%",
