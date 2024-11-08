@@ -2,6 +2,7 @@ import { useState } from "react";
 import RestaurantsCarousel from "../components/RestaurantsCarousel";
 import PageContainer from "../components/PageContainer";
 import GoogleMap from "../components/GoogleMap";
+
 import MichelinBanners from "../components/Michelin";
 import HowItWorks from "../components/HowItWorks";
 import AddRestaurantBanner from "../components/AddRestaurantBanner";
@@ -14,6 +15,7 @@ import vegetarianImage from "../assets/images/homepage-vegetarian-cuisine.jpg";
 import frenchIcon from "../assets/images/Icon-french.svg";
 import asianIcon from "../assets/images/Icon-asian.svg";
 import vegetarianIcon from "../assets/images/Icon-vegetarian.svg";
+import MoreDetails from "../components/MoreDetails";
 
 function Homepage() {
   const [selectedType, setSelectedType] = useState(null);
@@ -78,9 +80,11 @@ function Homepage() {
           </div>
         </div>
         {selectedType && <RestaurantsCarousel selectedType={selectedType} />}
-        <MichelinBanners />
       </div>
+
+      <MichelinBanners />
       <GoogleMap />
+      <MoreDetails />
       <AddRestaurantBanner />
     </PageContainer>
   );

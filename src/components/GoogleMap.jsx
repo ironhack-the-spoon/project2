@@ -6,10 +6,11 @@ function GoogleMap() {
           className="text-2xl w-full h-24 shadow-lg rounded-lg text-beige-light text-center flex justify-start pl-4 font-bold items-center"
           style={{ backgroundColor: "#06402B" }}
         >
-          📍 The Ultimate Guide to Restaurants in Paris
+          📍The Ultimate Guide to Restaurants in Paris
         </h1>
       </div>
-      <div className="flex justify-start items-center m-4 pb-8">
+      <div className="flex justify-start items-center mr-4 ml-4">
+
         <div
           style={{
             width: "100%",
