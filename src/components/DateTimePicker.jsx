@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Confetti from 'react-confetti';
 import useWindowSize from "../hook/useWindowSize";
-import "/src/assets/images/confirmation.png";
+import ConfirmationToast from "../assets/images/confirmation.png"
 
 function ConfettiCelebration({ show }) {
   const { width, height } = useWindowSize();
@@ -121,7 +121,7 @@ const DateTimePicker = () => {
       {isBookingConfirmed && (
         <div className="fixed bottom-16 right-4 bg-white p-4 rounded-lg shadow-lg flex items-center space-x-3 w-80">
           <img
-            src="/src/assets/images/confirmation.png" 
+            src={ConfirmationToast} 
             alt="Confirmation Icon" 
             className="w-6 h-6"
           />

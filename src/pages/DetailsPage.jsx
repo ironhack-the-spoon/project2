@@ -14,7 +14,8 @@ import IconLocation from "../assets/images/IconLocation.png";
 import IconType from "../assets/images/IconSpoon.png";
 import IconPrice from "../assets/images/IconPrice.png";
 import BackArrow from "../assets/images/BackArrow.png";
-import "/src/assets/images/delete-confirmation.png";
+import DeleteToast from "../assets/images/delete-confirmation.png";
+import ConfirmationToast from "../assets/images/confirmation.png"
 
 import DateTimePicker from "../components/DateTimePicker";
 
@@ -242,7 +243,7 @@ function DetailsPage() {
         {showToaster && (
           <div className="fixed bottom-16 right-4 bg-white p-4 rounded-lg shadow-lg flex items-center space-x-3 w-80">
             <img
-              src="/src/assets/images/confirmation.png" 
+              src={ConfirmationToast}
               alt="Confirmation Icon" 
               className="w-6 h-6"
             />
@@ -253,7 +254,7 @@ function DetailsPage() {
         {showDeleteToaster && (
           <div className="fixed bottom-16 right-4 bg-white p-4 rounded-lg shadow-lg flex items-center space-x-3 w-80">
             <img
-              src="/src/assets/images/delete-confirmation.png"
+              src={DeleteToast}
               alt="Delete Confirmation Icon"
               className="w-6 h-6"
             />
